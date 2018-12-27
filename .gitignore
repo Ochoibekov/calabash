@@ -1,0 +1,15 @@
+
+.idea/
+test_servers/
+tmp/
+
+screenshot*.png
+
+#iOS
+*.ipa
+*.app.dSYM
+*.app.dSYM.zip
+*.app
+.irb-history
+build/
+Products/

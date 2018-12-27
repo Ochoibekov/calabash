@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+usage() {
+    echo "Usage: $0 <arg>"
+    exit 0
+}
+if [ -z $1 ]; then
+    usage
+fi
+
+
+if [ "x$1" = "xios" ]; then
+    bundle exec cucumber -p ios_l
+elif [ "x$1" = "xandroid" ]; then
+	export ANDROID_HOME=~/Library/Android/sdk/ 
+    bundle exec calabash-android run app-prod-debug.apk -p android SCREENSHOT_VIA_USB="false" features --tags @login_1
+else
+    echo "Argument '$1' unknown. Exiting..."
+    exit 1
+fi
